@@ -1,0 +1,120 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Center all content horizontally */
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;  /* Make sure the text is centered */
+}
+
+/* Header styling for centering the main heading */
+header {
+  width: 100%;
+  margin-bottom: 20px;  /* Space between heading and gallery */
+}
+
+/* Main heading styling */
+h1 {
+  font-size: 2.5em;
+  color: #333;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 20px;  /* Optional: space from top of page */
+}
+
+/* Gallery container */
+#gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Equal width columns */
+  gap: 10px;
+  max-width: 900px;
+  width: 100%; /* Make gallery responsive */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Thumbnail images */
+#gallery-container img {
+  width: 100%;          /* Ensure it fills the column width */
+  height: 200px;        /* Set a fixed height */
+  object-fit: cover;    /* Maintain aspect ratio while covering the area */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#gallery-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal overlay for larger image and details */
+.modal-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Title and description */
+.modal-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.modal-description {
+  color: #555;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #333;
+  background: none;
+  border: none;
+}
+.close-button:hover {
+  color: #f44336;
+}
